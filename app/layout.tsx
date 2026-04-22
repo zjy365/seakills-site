@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
-const _inter = Inter({ subsets: ["latin"] });
-const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Seakills — One Command Deployment Skill',

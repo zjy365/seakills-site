@@ -63,6 +63,7 @@ export function TerminalDemo() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && phase === "idle") {
+          setTypingText("")
           setPhase("typing-deploy")
         }
       },
@@ -77,13 +78,13 @@ export function TerminalDemo() {
     if (phase !== "typing-deploy" && phase !== "typing-update") return
     const cmd = phase === "typing-deploy" ? deployCommand : updateCommand
     let i = 0
-    setTypingText("")
     const timer = setInterval(() => {
       if (i <= cmd.length) {
         setTypingText(cmd.slice(0, i))
         i++
       } else {
         clearInterval(timer)
+        setVisibleCount(0)
         setPhase(phase === "typing-deploy" ? "deploy" : "update")
       }
     }, 35)
@@ -93,7 +94,6 @@ export function TerminalDemo() {
   // Deploy lines animation
   useEffect(() => {
     if (phase !== "deploy") return
-    setVisibleCount(0)
     const timers: ReturnType<typeof setTimeout>[] = []
     deployLines.forEach((line, i) => {
       timers.push(
@@ -111,14 +111,16 @@ export function TerminalDemo() {
   // Pause then start update typing
   useEffect(() => {
     if (phase !== "pause") return
-    const timer = setTimeout(() => setPhase("typing-update"), 800)
+    const timer = setTimeout(() => {
+      setTypingText("")
+      setPhase("typing-update")
+    }, 800)
     return () => clearTimeout(timer)
   }, [phase])
 
   // Update lines animation
   useEffect(() => {
     if (phase !== "update") return
-    setVisibleCount(0)
     const timers: ReturnType<typeof setTimeout>[] = []
     updateLines.forEach((line, i) => {
       timers.push(
@@ -135,9 +137,6 @@ export function TerminalDemo() {
     }
   }, [visibleCount, typingText, phase])
 
-  const currentLines = phase === "update" ? updateLines : deployLines
-  const isTyping = phase === "typing-deploy" || phase === "typing-update"
-  const showLines = phase === "deploy" || phase === "update"
   const showDeployDone = phase === "pause" || phase === "typing-update" || phase === "update"
 
   return (
