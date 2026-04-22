@@ -6,6 +6,7 @@ import { PipelineSection } from "@/components/pipeline-section"
 import { SetupSection } from "@/components/setup-section"
 import { ProjectStructure } from "@/components/project-structure"
 import { CtaSection } from "@/components/cta-section"
+import { StarPrompt } from "@/components/star-prompt"
 import { GITHUB_URL, REPO } from "@/lib/constants"
 
 export default function Page() {
@@ -20,6 +21,7 @@ export default function Page() {
         <SetupSection />
         <ProjectStructure />
         <CtaSection />
+        <StarPrompt />
       </main>
 
       <footer className="border-t border-border py-8 text-center">
