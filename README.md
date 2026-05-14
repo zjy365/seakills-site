@@ -1,6 +1,6 @@
-# Seakills Site
+# Sealos Skills Site
 
-Landing site source for Seakills.
+Landing site source for Sealos Skills.
 
 ## Development
 
@@ -25,5 +25,5 @@ docker run -p 3000:3000 seakills-site
 
 ## Related Repositories
 
-- Product repo: https://github.com/labring/seakills
+- Product repo: https://github.com/labring/sealos-skills
 - This site repo: https://github.com/zjy365/seakills-site

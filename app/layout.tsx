@@ -14,11 +14,15 @@ const jetBrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Seakills — One Command Deployment Skill',
+  title: 'Sealos Skills - One Command Deployment Skill',
   description: 'One command to deploy and update any project on Sealos Cloud. Works with Claude Code, Gemini CLI, Codex — any AI coding assistant.',
   generator: 'v0.app',
   icons: {
     icon: [
+      {
+        url: '/logo.svg',
+        type: 'image/svg+xml',
+      },
       {
         url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',

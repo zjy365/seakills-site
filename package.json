@@ -2,7 +2,7 @@
   "name": "seakills-site",
   "version": "0.1.0",
   "private": true,
-  "description": "Landing site for Seakills",
+  "description": "Landing site for Sealos Skills",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

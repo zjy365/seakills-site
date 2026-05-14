@@ -4,12 +4,12 @@ import { useEffect, useMemo, useState } from "react"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { ExternalLink, Star, X } from "lucide-react"
 
-import { GITHUB_URL, REPO } from "@/lib/constants"
+import { BRAND_NAME, GITHUB_URL, REPO } from "@/lib/constants"
 
 const IS_PRODUCTION = process.env.NODE_ENV === "production"
 const PROMPT_DELAY_MS = IS_PRODUCTION ? 14_000 : 1_500
 const PROMPT_COOLDOWN_MS = 24 * 60 * 60 * 1000
-const PROMPT_HIDE_UNTIL_KEY = "seakills-star-prompt-hide-until"
+const PROMPT_HIDE_UNTIL_KEY = "sealos-skills-star-prompt-hide-until"
 const ENABLE_COOLDOWN = IS_PRODUCTION
 
 function formatStarCount(stars: number | null) {
@@ -136,7 +136,7 @@ export function StarPrompt() {
                       Open Source Support
                     </p>
                     <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground md:flex-nowrap md:whitespace-nowrap">
-                      <span>Like seakills?</span>
+                      <span>Like {BRAND_NAME}?</span>
                       <span className="font-mono text-foreground">Star {REPO}</span>
                       {starLabel ? (
                         <motion.span

@@ -51,7 +51,7 @@ export function ProjectStructure() {
           className="overflow-hidden rounded-xl border border-border bg-card"
         >
           <div className="border-b border-border px-5 py-3">
-            <span className="font-mono text-xs text-muted-foreground">seakills/</span>
+            <span className="font-mono text-xs text-muted-foreground">sealos-skills/</span>
           </div>
           <div className="p-5 font-mono text-sm leading-loose">
             {tree.map((item, i) => (

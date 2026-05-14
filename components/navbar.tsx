@@ -1,8 +1,9 @@
 "use client"
 
+import Image from "next/image"
 import { useState, useCallback, useEffect } from "react"
 import { Check, Copy } from "lucide-react"
-import { GITHUB_URL, INSTALL_CMD } from "@/lib/constants"
+import { BRAND_NAME, GITHUB_URL, INSTALL_CMD } from "@/lib/constants"
 
 export function Navbar() {
   const [copied, setCopied] = useState(false)
@@ -36,14 +37,9 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary text-primary-foreground">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="4 17 10 11 4 5" />
-              <line x1="12" y1="19" x2="20" y2="19" />
-            </svg>
-          </div>
+          <Image src="/logo.svg" alt="" width={28} height={28} priority />
           <span className="font-mono text-sm font-semibold text-foreground">
-            seakills
+            {BRAND_NAME}
           </span>
         </div>
 
